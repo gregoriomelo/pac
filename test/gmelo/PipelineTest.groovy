@@ -3,7 +3,8 @@ package gmelo
 import spock.lang.Specification
 
 class PipelineTest extends Specification {
-    def "Disparar a pipeline"() {
+
+    def "Quebra o build no segundo estágio"() {
         given:
         StepsMock steps = new StepsMock()
         def pipeline = new Pipeline(steps)
@@ -12,7 +13,7 @@ class PipelineTest extends Specification {
         pipeline.disparar()
 
         then:
-        steps.mensagensEcoadas == ["Disparou"]
-        steps.estagiosCriados == ["Preparação"]
+        steps.estagiosCriados == ["Preparação", "Quebradeira"]
+        steps.mensagensEcoadas == ["Disparou", "Quebre tudo!"]
     }
 }

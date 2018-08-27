@@ -17,4 +17,9 @@ class StepsMock {
     def echo(String mensagem) {
         mensagensEcoadas << mensagem
     }
+
+    def error(String mensagem) {
+        mensagensEcoadas << mensagem
+    }
+
 }
