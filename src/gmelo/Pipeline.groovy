@@ -9,13 +9,13 @@ class Pipeline {
 
     def disparar() {
         this.steps.stage("Preparação") {
-            this.steps.node("maven") {
+            this.steps.node("") {
                 this.steps.echo "Disparou"
             }
         }
 
         this.steps.stage("Quebradeira") {
-            this.steps.node("maven") {
+            this.steps.node("") {
                 this.steps.error "Quebre tudo!"
             }
         }
